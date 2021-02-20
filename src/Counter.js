@@ -1,25 +1,27 @@
 
 const Counter = ( props ) => {
-    const max = 6;
-    const totalZeros = max - props.seconds.length;
-    const clock = <i className="far fa-clock"></i>;
-    let displayCounterValue = "";
 
-    for(let i=0; i < totalZeros; i++)
-        displayCounterValue += "0";
+    const placeholder = "000000";
+    const clockIcon = <i className="far fa-clock"></i>;
 
-    displayCounterValue += props.seconds;
+    let boxes = placeholder
+                    .split("")
+                    .slice(props.seconds.length)
+                    .join("") + props.seconds;
 
-    let boxes = displayCounterValue.split("");
-    boxes.unshift(clock);
-    const htmlString = boxes.map( (box, index) => <div className="box" key={index}>{box}</div> );
+    let counter = boxes.split("");
+    counter.unshift(clockIcon);
+
+    const divBoxes = counter.map( (box, i) => <div className="box" key={i}>{box}</div> );
+    
     return (
         <div className="container-sm" >
             <div className="d-flex justify-content-center">
-                {htmlString}
+                { divBoxes }
             </div>
         </div>
     );
+
 }
 
 

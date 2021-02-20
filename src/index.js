@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import Counter from './Counter';
+//import Counter from './Counter';
 import Counter from './CounterAdvanced';
 import reportWebVitals from './reportWebVitals';
 
