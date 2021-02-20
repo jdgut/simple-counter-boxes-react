@@ -1,6 +1,4 @@
 
-import "bootstrap";
-
 const Counter = ( props ) => {
     const max = 6;
     const totalZeros = max - props.seconds.length;
@@ -23,5 +21,6 @@ const Counter = ( props ) => {
         </div>
     );
 }
+
 
 export default Counter;

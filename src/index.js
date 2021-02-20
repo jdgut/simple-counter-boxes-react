@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Counter from './Counter';
+// import Counter from './Counter';
+import Counter from './CounterAdvanced';
 import reportWebVitals from './reportWebVitals';
 
-let number = 0;
-const interval = 1000;
+let number = 1;
 const componentInterval = setInterval(() => {
   
-  if(number.toString().length === 6) {
+  //stop counter once it reaches max number of runs
+  if(number === 999999) {
     clearInterval(componentInterval);
+    console.log('timer reached max seconds');
   }
 
   ReactDOM.render(
@@ -19,7 +21,7 @@ const componentInterval = setInterval(() => {
     document.getElementById('root')
   );
   number = number +1;
-}, interval);
+}, 1000);
 
 
 // If you want to start measuring performance in your app, pass a function
